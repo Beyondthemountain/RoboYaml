@@ -1,7 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { generateDiagrams } from "openapi-mermaid";
+import yaml from "js-yaml";
+import { createMermaidGraph } from "openapi-mermaid";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,24 +29,23 @@ if (!fs.existsSync(sourceDir)) {
 }
 
 const specs = findSpecs(sourceDir);
-
 if (specs.length === 0) {
   console.error("No OpenAPI files found in yaml_source/");
   process.exit(1);
 }
 
-for (const spec of specs) {
-  const rel = path.relative(sourceDir, spec);
+for (const specPath of specs) {
+  const rel = path.relative(sourceDir, specPath);
   const base = rel.replace(/[\\/]/g, "__").replace(/\.(ya?ml|json)$/i, "");
-  const fileUrl = new URL(`file://${spec}`).toString();
 
-  await generateDiagrams({
-    openApiJsonUrl: fileUrl,
-    outputPath: mmdOutDir,
-    outputFileName: base,
-  });
+  const raw = fs.readFileSync(specPath, "utf8");
+  const doc = specPath.toLowerCase().endsWith(".json") ? JSON.parse(raw) : yaml.load(raw);
 
-  console.log(`Generated MMD for ${rel}`);
+  const mmd = createMermaidGraph(doc);
+  const outPath = path.join(mmdOutDir, `${base}.mmd`);
+  fs.writeFileSync(outPath, mmd, "utf8");
+
+  console.log(`Wrote ${outPath}`);
 }
 
-console.log("Mermaid generation complete.");
+console.log("Done.");
