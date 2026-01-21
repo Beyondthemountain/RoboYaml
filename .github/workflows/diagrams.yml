@@ -2,7 +2,7 @@ name: Generate diagrams
 
 on:
   push:
-    branches: [ "gui" ]
+    branches: [ "main" ]
     paths:
       - "yaml_source/**"
       - "scripts/generate_diagrams.mjs"
