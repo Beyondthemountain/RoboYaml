@@ -1,3 +1,4 @@
+// scripts/generate_diagrams.mjs
 import fs from "node:fs";
 import path from "node:path";
 import http from "node:http";
@@ -55,6 +56,7 @@ const server = http.createServer((req, res) => {
   const filePath = path.join(sourceDir, rel);
   const normalised = path.normalize(filePath);
 
+  // prevent path traversal
   if (!normalised.startsWith(sourceDir)) {
     res.writeHead(400);
     return res.end("Bad request");
@@ -84,8 +86,11 @@ server.listen(0, "127.0.0.1", async () => {
 
   const baseUrl = `http://127.0.0.1:${port}`;
 
+  // Track exactly what we generate (avoids any filesystem scan issues)
+  const generatedMmdFiles = [];
+
   try {
-    // 1) Generate one .mmd per spec (preserve subfolders)
+    // 1) Generate one .mmd per spec (preserve subfolders; prevents collisions)
     for (const specPath of specs) {
       const rel = path.relative(sourceDir, specPath).replace(/\\/g, "/");
       const relDir = path.posix.dirname(rel); // '.' for root
@@ -100,22 +105,26 @@ server.listen(0, "127.0.0.1", async () => {
         outputFileName: baseName,
       });
 
-      console.log(`MMD: ${path.posix.join("yaml_output/mmd", relDir, baseName + ".mmd")}`);
+      const produced = path.join(outMmdDir, `${baseName}.mmd`);
+      generatedMmdFiles.push(produced);
+
+      console.log(
+        `MMD: ${path.posix.join(
+          "yaml_output/mmd",
+          relDir === "." ? "" : relDir,
+          `${baseName}.mmd`
+        )}`
+      );
     }
 
-    // 2) Render SVG for every .mmd found (preserve subfolders)
-    const mmdFiles = [];
-    (function walk(dir) {
-      for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-        const full = path.join(dir, entry.name);
-        if (entry.isDirectory()) walk(full);
-        else if (entry.isFile() && entry.name.toLowerCase().endsWith(".mmd")) mmdFiles.push(full);
+    // 2) Render SVG for each generated .mmd (preserve subfolders)
+    if (generatedMmdFiles.length === 0) die("No .mmd files recorded (unexpected)");
+
+    for (const mmdPath of generatedMmdFiles) {
+      if (!fs.existsSync(mmdPath)) {
+        die(`Expected .mmd missing on disk: ${mmdPath}`);
       }
-    })(mmdRoot);
 
-    if (mmdFiles.length === 0) die("No .mmd files produced (generation failed?)");
-
-    for (const mmdPath of mmdFiles) {
       const rel = path.relative(mmdRoot, mmdPath).replace(/\\/g, "/");
       const svgPath = path.join(svgRoot, rel.replace(/\.mmd$/i, ".svg"));
       ensureDir(path.dirname(svgPath));
@@ -128,10 +137,18 @@ server.listen(0, "127.0.0.1", async () => {
 
       if (r.status !== 0) die(`Mermaid CLI failed for ${mmdPath}`);
 
-      console.log(`SVG: ${path.posix.join("yaml_output/svg", rel.replace(/\.mmd$/i, ".svg"))}`);
+      console.log(
+        `SVG: ${path.posix.join(
+          "yaml_output/svg",
+          rel.replace(/\.mmd$/i, ".svg")
+        )}`
+      );
     }
 
     console.log("Done.");
+  } catch (e) {
+    console.error(e?.stack || e);
+    process.exit(1);
   } finally {
     server.close();
   }
