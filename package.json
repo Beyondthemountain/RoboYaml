@@ -5,5 +5,22 @@
   "dependencies": {
     "js-yaml": "^4.1.1",
     "openapi-mermaid": "^4.12.3"
-  }
+  },
+  "version": "1.0.0",
+  "description": "create mmd and svg diagrams from yaml files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Beyondthemountain/RoboYaml.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Beyondthemountain/RoboYaml/issues"
+  },
+  "homepage": "https://github.com/Beyondthemountain/RoboYaml#readme"
 }
