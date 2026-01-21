@@ -42,6 +42,7 @@ jobs:
             npx -y @mermaid-js/mermaid-cli -i "$f" -o "yaml_output/svg/${base}.svg"
           done
 
+
       - name: Commit generated diagrams
         run: |
           git config user.name "github-actions[bot]"
