@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Test3 Account and Transaction API Specification
+  title: Test4 Account and Transaction API Specification
   description: Swagger for Account and Transaction API Specification
   termsOfService: https://www.openbanking.org.uk/terms
   contact:
