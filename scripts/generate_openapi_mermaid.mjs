@@ -2,7 +2,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
-import { createMermaidGraph } from "openapi-mermaid";
+import openapiMermaid from "openapi-mermaid";
+const { createMermaidGraph } = openapiMermaid;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -49,3 +50,4 @@ for (const specPath of specs) {
 }
 
 console.log("Done.");
+
