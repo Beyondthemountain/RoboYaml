@@ -1,8 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
+import os from "node:os";
+import crypto from "node:crypto";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
+import yaml from "js-yaml";
 import openapiMermaid from "openapi-mermaid";
 const { generateDiagrams } = openapiMermaid;
 
@@ -49,6 +52,21 @@ function newestFile(paths) {
     .sort((a, b) => b.t - a.t)[0].p;
 }
 
+function toTempJsonIfNeeded(specPath) {
+  const ext = path.extname(specPath).toLowerCase();
+  if (ext === ".json") return { inputPath: specPath, tempPath: null };
+
+  // YAML -> JSON temp file
+  const raw = fs.readFileSync(specPath, "utf8");
+  const doc = yaml.load(raw);
+
+  const h = crypto.createHash("sha256").update(specPath).digest("hex").slice(0, 16);
+  const tempPath = path.join(os.tmpdir(), `openapi-${h}.json`);
+
+  fs.writeFileSync(tempPath, JSON.stringify(doc), "utf8");
+  return { inputPath: tempPath, tempPath };
+}
+
 if (!fs.existsSync(sourceDir)) die(`Missing source directory: ${sourceDir}`);
 
 const specs = findSpecs(sourceDir);
@@ -68,40 +86,49 @@ for (const specPath of specs) {
   ensureDir(outMmdDir);
   ensureDir(outSvgDir);
 
-  // Snapshot existing diagram-like files before generation
+  // Snapshot diagram-like files before generation
   const before = new Set(listDiagramFiles(outMmdDir));
 
-  // Generate diagram from LOCAL file (no http/file://)
-  await generateDiagrams({
-    openApiJsonFileName: specPath,
-    outputPath: outMmdDir,
-    // outputFileName is optional; we will normalise the output name ourselves
-  });
+  // Ensure openapi-mermaid gets JSON
+  const { inputPath, tempPath } = toTempJsonIfNeeded(specPath);
 
-  // Identify what file was produced
+  try {
+    await generateDiagrams({
+      openApiJsonFileName: inputPath,
+      outputPath: outMmdDir
+    });
+  } finally {
+    if (tempPath) {
+      try { fs.unlinkSync(tempPath); } catch {}
+    }
+  }
+
+  // Identify produced output (openapi-mermaid may write .md or .mmd with varying names)
   const after = listDiagramFiles(outMmdDir).filter((p) => !before.has(p));
   let produced = after.length === 1 ? after[0] : newestFile(after);
-
-  // Fallback: sometimes the tool overwrites an existing file name
   if (!produced) produced = newestFile(listDiagramFiles(outMmdDir));
 
   if (!produced) {
     die(`No diagram file produced for ${rel} (expected .mmd or .md in ${outMmdDir})`);
   }
 
-  // Normalise to a deterministic .mmd filename
+  // Normalise to deterministic .mmd filename
   const normalisedMmd = path.join(outMmdDir, `${baseName}.mmd`);
   if (path.resolve(produced) !== path.resolve(normalisedMmd)) {
-    // Overwrite if exists (keeps updates consistent)
     try { fs.unlinkSync(normalisedMmd); } catch {}
     fs.renameSync(produced, normalisedMmd);
   }
 
-  console.log(`MMD: ${path.posix.join("yaml_output/mmd", relDir === "." ? "" : relDir, `${baseName}.mmd`)}`);
+  console.log(
+    `MMD: ${path.posix.join(
+      "yaml_output/mmd",
+      relDir === "." ? "" : relDir,
+      `${baseName}.mmd`
+    )}`
+  );
 
-  // Render SVG next to it (mirroring folder structure)
+  // Render SVG (mirrors folder structure)
   const svgPath = path.join(outSvgDir, `${baseName}.svg`);
-
   const r = spawnSync(
     "npx",
     ["-y", "@mermaid-js/mermaid-cli", "-i", normalisedMmd, "-o", svgPath],
@@ -109,7 +136,13 @@ for (const specPath of specs) {
   );
   if (r.status !== 0) die(`Mermaid CLI failed for ${normalisedMmd}`);
 
-  console.log(`SVG: ${path.posix.join("yaml_output/svg", relDir === "." ? "" : relDir, `${baseName}.svg`)}`);
+  console.log(
+    `SVG: ${path.posix.join(
+      "yaml_output/svg",
+      relDir === "." ? "" : relDir,
+      `${baseName}.svg`
+    )}`
+  );
 }
 
 console.log("Done.");
