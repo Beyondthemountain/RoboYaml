@@ -1,9 +1,10 @@
 import fs from "node:fs";
 import path from "node:path";
+import http from "node:http";
 import { fileURLToPath } from "node:url";
-import yaml from "js-yaml";
+
 import openapiMermaid from "openapi-mermaid";
-const { createMermaidGraph } = openapiMermaid;
+const { generateDiagrams } = openapiMermaid;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,8 +23,6 @@ function findSpecs(dir) {
   return files;
 }
 
-fs.mkdirSync(mmdOutDir, { recursive: true });
-
 if (!fs.existsSync(sourceDir)) {
   console.error(`Source directory not found: ${sourceDir}`);
   process.exit(1);
@@ -35,19 +34,61 @@ if (specs.length === 0) {
   process.exit(1);
 }
 
-for (const specPath of specs) {
-  const rel = path.relative(sourceDir, specPath);
-  const base = rel.replace(/[\\/]/g, "__").replace(/\.(ya?ml|json)$/i, "");
+fs.mkdirSync(mmdOutDir, { recursive: true });
 
-  const raw = fs.readFileSync(specPath, "utf8");
-  const doc = specPath.toLowerCase().endsWith(".json") ? JSON.parse(raw) : yaml.load(raw);
+// Tiny server to serve yaml_source/ over HTTP for generateDiagrams()
+const server = http.createServer((req, res) => {
+  const reqPath = decodeURIComponent((req.url || "/").split("?")[0]);
 
-  const mmd = createMermaidGraph(doc);
-  const outPath = path.join(mmdOutDir, `${base}.mmd`);
-  fs.writeFileSync(outPath, mmd, "utf8");
+  // Only serve under /yaml_source/...
+  if (!reqPath.startsWith("/yaml_source/")) {
+    res.writeHead(404);
+    return res.end("Not found");
+  }
 
-  console.log(`Wrote ${outPath}`);
-}
+  const rel = reqPath.replace("/yaml_source/", "");
+  const filePath = path.join(sourceDir, rel);
 
-console.log("Done.");
+  // Prevent path traversal
+  const normalised = path.normalize(filePath);
+  if (!normalised.startsWith(sourceDir)) {
+    res.writeHead(400);
+    return res.end("Bad request");
+  }
 
+  if (!fs.existsSync(normalised) || fs.statSync(normalised).isDirectory()) {
+    res.writeHead(404);
+    return res.end("Not found");
+  }
+
+  const ext = path.extname(normalised).toLowerCase();
+  const contentType =
+    ext === ".json" ? "application/json" :
+    (ext === ".yaml" || ext === ".yml") ? "application/yaml" :
+    "text/plain";
+
+  res.writeHead(200, { "Content-Type": contentType });
+  fs.createReadStream(normalised).pipe(res);
+});
+
+server.listen(0, "127.0.0.1", async () => {
+  const { port } = server.address();
+  const baseUrl = `http://127.0.0.1:${port}`;
+
+  try {
+    for (const specPath of specs) {
+      const rel = path.relative(sourceDir, specPath).replace(/\\/g, "/");
+      const baseName = rel.replace(/\.(ya?ml|json)$/i, "").replace(/\//g, "__");
+
+      await generateDiagrams({
+        openApiJsonUrl: `${baseUrl}/yaml_source/${rel}`,
+        outputPath: mmdOutDir,
+        outputFileName: baseName
+      });
+
+      console.log(`Generated MMD for ${rel}`);
+    }
+  } finally {
+    server.close();
+  }
+});
