@@ -77,18 +77,24 @@ server.listen(0, "127.0.0.1", async () => {
 
   try {
     for (const specPath of specs) {
-      const rel = path.relative(sourceDir, specPath).replace(/\\/g, "/");
-      const baseName = rel.replace(/\.(ya?ml|json)$/i, "").replace(/\//g, "__");
+  const rel = path.relative(sourceDir, specPath).replace(/\\/g, "/");
+  const relDir = path.posix.dirname(rel); // '.' if file is at root
+  const baseName = path.posix.basename(rel).replace(/\.(ya?ml|json)$/i, "");
 
-      await generateDiagrams({
-        openApiJsonUrl: `${baseUrl}/yaml_source/${rel}`,
-        outputPath: mmdOutDir,
-        outputFileName: baseName
-      });
+  const outDir = relDir === "." ? mmdOutDir : path.join(mmdOutDir, relDir);
+  fs.mkdirSync(outDir, { recursive: true });
 
-      console.log(`Generated MMD for ${rel}`);
-    }
+  await generateDiagrams({
+    openApiJsonUrl: `${baseUrl}/yaml_source/${rel}`,
+    outputPath: outDir,
+    outputFileName: baseName
+  });
+
+  console.log(`Generated MMD for ${rel} -> ${path.posix.join(relDir, baseName)}.mmd`);
+}
+
   } finally {
     server.close();
   }
 });
+
