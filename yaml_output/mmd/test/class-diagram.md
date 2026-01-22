@@ -1,0 +1,2152 @@
+```mermaid
+classDiagram
+
+  OBReferredDocumentInformation ..> ExternalDocumentType1Code
+  OBRemittanceInformation2 ..> OBRemittanceInformationStructured
+  OBRemittanceInformationStructured ..> OBReferredDocumentInformation
+  OBRemittanceInformationStructured ..> Identification_3
+  OBRemittanceInformationStructured ..> Identification_4
+  OBUltimateCreditor1 ..> LEI
+  OBUltimateCreditor1 ..> OBInternalAccountIdentification4Code
+  OBUltimateCreditor1 ..> OBPostalAddress7
+  OBUltimateDebtor1 ..> LEI
+  OBUltimateDebtor1 ..> OBInternalAccountIdentification4Code
+  OBUltimateDebtor1 ..> OBPostalAddress7
+  OBFrequency6 ..> PointInTime
+  OBProxy1 ..> ExternalProxyAccountType1Code
+  Meta ..> ISODateTime
+  OBAccount6 ..> AccountId
+  OBAccount6 ..> OBInternalAccountStatus1Code
+  OBAccount6 ..> StatusUpdateDateTime
+  OBAccount6 ..> ActiveOrHistoricCurrencyCode_0
+  OBAccount6 ..> OBInternalAccountType1Code
+  OBAccount6 ..> OBExternalAccountSubType1Code
+  OBAccount6 ..> Description_0
+  OBAccount6 ..> Nickname
+  OBAccount6 ..> OpeningDate
+  OBAccount6 ..> MaturityDate
+  OBAccount6 ..> OBInternalSwitchStatusCode
+  OBAccount6 ..> StatementFrequencyAndFormat
+  OBAccount6 ..> OBBranchAndFinancialInstitutionIdentification5_0
+  OBAccount6Basic ..> AccountId
+  OBAccount6Basic ..> OBInternalAccountStatus1Code
+  OBAccount6Basic ..> StatusUpdateDateTime
+  OBAccount6Basic ..> ActiveOrHistoricCurrencyCode_0
+  OBAccount6Basic ..> OBInternalAccountType1Code
+  OBAccount6Basic ..> OBExternalAccountSubType1Code
+  OBAccount6Basic ..> Description_0
+  OBAccount6Basic ..> Nickname
+  OBAccount6Basic ..> OpeningDate
+  OBAccount6Basic ..> MaturityDate
+  OBAccount6Basic ..> OBInternalSwitchStatusCode
+  OBAccount6Detail ..> AccountId
+  OBAccount6Detail ..> OBInternalAccountStatus1Code
+  OBAccount6Detail ..> StatusUpdateDateTime
+  OBAccount6Detail ..> ActiveOrHistoricCurrencyCode_0
+  OBAccount6Detail ..> OBInternalAccountType1Code
+  OBAccount6Detail ..> OBExternalAccountSubType1Code
+  OBAccount6Detail ..> Description_0
+  OBAccount6Detail ..> Nickname
+  OBAccount6Detail ..> OpeningDate
+  OBAccount6Detail ..> MaturityDate
+  OBAccount6Detail ..> OBInternalSwitchStatusCode
+  OBAccount6Detail ..> StatementFrequencyAndFormat
+  OBAccount6Detail ..> OBBranchAndFinancialInstitutionIdentification5_0
+  OBActiveOrHistoricCurrencyAndAmount_0 ..> OBActiveCurrencyAndAmount_SimpleType
+  OBActiveOrHistoricCurrencyAndAmount_0 ..> ActiveOrHistoricCurrencyCode_1
+  OBActiveOrHistoricCurrencyAndAmount_1 ..> OBActiveCurrencyAndAmount_SimpleType
+  OBActiveOrHistoricCurrencyAndAmount_1 ..> ActiveOrHistoricCurrencyCode_1
+  OBActiveOrHistoricCurrencyAndAmount_10 ..> OBActiveCurrencyAndAmount_SimpleType
+  OBActiveOrHistoricCurrencyAndAmount_10 ..> ActiveOrHistoricCurrencyCode_1
+  OBActiveOrHistoricCurrencyAndAmount_11 ..> OBActiveCurrencyAndAmount_SimpleType
+  OBActiveOrHistoricCurrencyAndAmount_11 ..> ActiveOrHistoricCurrencyCode_1
+  OBActiveOrHistoricCurrencyAndAmount_2 ..> OBActiveCurrencyAndAmount_SimpleType
+  OBActiveOrHistoricCurrencyAndAmount_2 ..> ActiveOrHistoricCurrencyCode_1
+  OBActiveOrHistoricCurrencyAndAmount_3 ..> OBActiveCurrencyAndAmount_SimpleType
+  OBActiveOrHistoricCurrencyAndAmount_3 ..> ActiveOrHistoricCurrencyCode_1
+  OBActiveOrHistoricCurrencyAndAmount_4 ..> OBActiveCurrencyAndAmount_SimpleType
+  OBActiveOrHistoricCurrencyAndAmount_4 ..> ActiveOrHistoricCurrencyCode_1
+  OBActiveOrHistoricCurrencyAndAmount_5 ..> OBActiveCurrencyAndAmount_SimpleType
+  OBActiveOrHistoricCurrencyAndAmount_5 ..> ActiveOrHistoricCurrencyCode_1
+  OBActiveOrHistoricCurrencyAndAmount_6 ..> OBActiveCurrencyAndAmount_SimpleType
+  OBActiveOrHistoricCurrencyAndAmount_6 ..> ActiveOrHistoricCurrencyCode_1
+  OBActiveOrHistoricCurrencyAndAmount_7 ..> OBActiveCurrencyAndAmount_SimpleType
+  OBActiveOrHistoricCurrencyAndAmount_7 ..> ActiveOrHistoricCurrencyCode_1
+  OBActiveOrHistoricCurrencyAndAmount_8 ..> OBActiveCurrencyAndAmount_SimpleType
+  OBActiveOrHistoricCurrencyAndAmount_8 ..> ActiveOrHistoricCurrencyCode_1
+  OBActiveOrHistoricCurrencyAndAmount_8 ..> OBExternalBalanceSubType1Code
+  OBActiveOrHistoricCurrencyAndAmount_9 ..> OBActiveCurrencyAndAmount_SimpleType
+  OBActiveOrHistoricCurrencyAndAmount_9 ..> ActiveOrHistoricCurrencyCode_1
+  OBBeneficiary5 ..> AccountId
+  OBBeneficiary5 ..> BeneficiaryId
+  OBBeneficiary5 ..> OBInternalBeneficiaryType1Code
+  OBBeneficiary5 ..> Reference
+  OBBeneficiary5 ..> OBSupplementaryData1
+  OBBeneficiary5 ..> OBBranchAndFinancialInstitutionIdentification6_0
+  OBBeneficiary5 ..> OBCashAccount5_0
+  OBBeneficiary5Basic ..> AccountId
+  OBBeneficiary5Basic ..> BeneficiaryId
+  OBBeneficiary5Basic ..> OBInternalBeneficiaryType1Code
+  OBBeneficiary5Basic ..> Reference
+  OBBeneficiary5Basic ..> OBSupplementaryData1
+  OBBeneficiary5Detail ..> AccountId
+  OBBeneficiary5Detail ..> BeneficiaryId
+  OBBeneficiary5Detail ..> OBInternalBeneficiaryType1Code
+  OBBeneficiary5Detail ..> Reference
+  OBBeneficiary5Detail ..> OBSupplementaryData1
+  OBBeneficiary5Detail ..> OBBranchAndFinancialInstitutionIdentification6_0
+  OBBeneficiary5Detail ..> OBCashAccount5_0
+  OBBranchAndFinancialInstitutionIdentification5_0 ..> OBInternalFinancialInstitutionIdentification4Code
+  OBBranchAndFinancialInstitutionIdentification5_0 ..> Identification_1
+  OBBranchAndFinancialInstitutionIdentification5_0 ..> Name_1
+  OBBranchAndFinancialInstitutionIdentification5_1 ..> OBInternalFinancialInstitutionIdentification4Code
+  OBBranchAndFinancialInstitutionIdentification5_1 ..> Identification_1
+  OBBranchAndFinancialInstitutionIdentification5_1 ..> Name_1
+  OBBranchAndFinancialInstitutionIdentification5_1 ..> OBPostalAddress7
+  OBBranchAndFinancialInstitutionIdentification5_1 ..> LEI
+  OBBranchAndFinancialInstitutionIdentification6_0 ..> OBInternalFinancialInstitutionIdentification4Code
+  OBBranchAndFinancialInstitutionIdentification6_0 ..> Identification_1
+  OBBranchAndFinancialInstitutionIdentification6_0 ..> Name_1
+  OBBranchAndFinancialInstitutionIdentification6_0 ..> OBPostalAddress7
+  OBBranchAndFinancialInstitutionIdentification6_0 ..> LEI
+  OBBranchAndFinancialInstitutionIdentification6_1 ..> OBInternalFinancialInstitutionIdentification4Code
+  OBBranchAndFinancialInstitutionIdentification6_1 ..> Identification_2
+  OBBranchAndFinancialInstitutionIdentification6_1 ..> Name_1
+  OBBranchAndFinancialInstitutionIdentification6_1 ..> LEI
+  OBBranchAndFinancialInstitutionIdentification6_1 ..> OBPostalAddress7
+  OBBranchAndFinancialInstitutionIdentification6_2 ..> OBInternalFinancialInstitutionIdentification4Code
+  OBBranchAndFinancialInstitutionIdentification6_2 ..> Identification_2
+  OBBranchAndFinancialInstitutionIdentification6_2 ..> Name_1
+  OBBranchAndFinancialInstitutionIdentification6_2 ..> LEI
+  OBBranchAndFinancialInstitutionIdentification6_2 ..> OBPostalAddress7
+  OBCashAccount5_0 ..> OBInternalAccountIdentification4Code
+  OBCashAccount5_0 ..> Identification_0
+  OBCashAccount5_0 ..> Name_0
+  OBCashAccount5_0 ..> SecondaryIdentification
+  OBCashAccount5_0 ..> OBProxy1
+  OBCashAccount5_1 ..> OBInternalAccountIdentification4Code
+  OBCashAccount5_1 ..> Name_0
+  OBCashAccount5_1 ..> SecondaryIdentification
+  OBCashAccount5_1 ..> OBProxy1
+  OBCashAccount6_0 ..> OBInternalAccountIdentification4Code
+  OBCashAccount6_0 ..> Identification_0
+  OBCashAccount6_0 ..> Name_0
+  OBCashAccount6_0 ..> SecondaryIdentification
+  OBCashAccount6_0 ..> OBProxy1
+  OBCashAccount6_1 ..> OBInternalAccountIdentification4Code
+  OBCashAccount6_1 ..> Identification_0
+  OBCashAccount6_1 ..> Name_0
+  OBCashAccount6_1 ..> SecondaryIdentification
+  OBCashAccount6_1 ..> OBProxy1
+  OBError1 ..> OBExternalStatusReason1Code
+  OBErrorResponse1 ..> OBError1
+  OBMandateRelatedInformation1 ..> OBExternalMandateClassification1Code
+  OBMandateRelatedInformation1 ..> ExternalCategoryPurpose1Code
+  OBMandateRelatedInformation1 ..> OBFrequency6
+  OBParty2 ..> PartyId
+  OBParty2 ..> PartyNumber
+  OBParty2 ..> OBInternalPartyType1Code
+  OBParty2 ..> Name_3
+  OBParty2 ..> FullLegalName
+  OBParty2 ..> OBInternalLegalStructureType1Code
+  OBParty2 ..> LEI
+  OBParty2 ..> OBInternalAccountRole1Code
+  OBParty2 ..> EmailAddress
+  OBParty2 ..> PhoneNumber_0
+  OBParty2 ..> PhoneNumber_1
+  OBParty2 ..> OBPartyRelationships1
+  OBParty2 ..> OBPostalAddress7
+  OBPostalAddress7 ..> OBAddressType2Code
+  OBPostalAddress7 ..> StreetName
+  OBPostalAddress7 ..> BuildingNumber
+  OBPostalAddress7 ..> BuildingName
+  OBPostalAddress7 ..> Floor
+  OBPostalAddress7 ..> UnitNumber
+  OBPostalAddress7 ..> Room
+  OBPostalAddress7 ..> PostBox
+  OBPostalAddress7 ..> TownName
+  OBPostalAddress7 ..> DistrictName
+  OBPostalAddress7 ..> CareOf
+  OBPostalAddress7 ..> PostCode
+  OBReadAccount6 ..> Links
+  OBReadAccount6 ..> Meta
+  OBReadBalance1 ..> Links
+  OBReadBalance1 ..> Meta
+  OBReadBeneficiary5 ..> Links
+  OBReadBeneficiary5 ..> Meta
+  OBReadConsent1 ..> OBRisk2
+  OBReadConsentResponse1 ..> OBRisk2
+  OBReadConsentResponse1 ..> Links
+  OBReadConsentResponse1 ..> Meta
+  OBReadDataStatement2 ..> OBStatement2
+  OBReadDataTransaction6 ..> OBTransaction6
+  OBReadDirectDebit2 ..> Links
+  OBReadDirectDebit2 ..> Meta
+  OBReadOffer1 ..> Links
+  OBReadOffer1 ..> Meta
+  OBReadParty2 ..> Links
+  OBReadParty2 ..> Meta
+  OBReadParty3 ..> Links
+  OBReadParty3 ..> Meta
+  OBReadProduct2 ..> Links
+  OBReadProduct2 ..> Meta
+  OBReadScheduledPayment3 ..> Links
+  OBReadScheduledPayment3 ..> Meta
+  OBReadStandingOrder6 ..> Links
+  OBReadStandingOrder6 ..> Meta
+  OBReadStatement2 ..> OBReadDataStatement2
+  OBReadStatement2 ..> Links
+  OBReadStatement2 ..> Meta
+  OBReadTransaction6 ..> OBReadDataTransaction6
+  OBReadTransaction6 ..> Links
+  OBReadTransaction6 ..> Meta
+  OBScheduledPayment3 ..> AccountId
+  OBScheduledPayment3 ..> ScheduledPaymentId
+  OBScheduledPayment3 ..> ScheduledPaymentDateTime
+  OBScheduledPayment3 ..> OBInternalScheduleType1Code
+  OBScheduledPayment3 ..> Reference
+  OBScheduledPayment3 ..> DebtorReference
+  OBScheduledPayment3 ..> OBActiveOrHistoricCurrencyAndAmount_1
+  OBScheduledPayment3 ..> OBBranchAndFinancialInstitutionIdentification5_1
+  OBScheduledPayment3 ..> OBCashAccount5_1
+  OBScheduledPayment3Basic ..> AccountId
+  OBScheduledPayment3Basic ..> ScheduledPaymentId
+  OBScheduledPayment3Basic ..> ScheduledPaymentDateTime
+  OBScheduledPayment3Basic ..> OBInternalScheduleType1Code
+  OBScheduledPayment3Basic ..> Reference
+  OBScheduledPayment3Basic ..> DebtorReference
+  OBScheduledPayment3Basic ..> OBActiveOrHistoricCurrencyAndAmount_1
+  OBScheduledPayment3Detail ..> AccountId
+  OBScheduledPayment3Detail ..> ScheduledPaymentId
+  OBScheduledPayment3Detail ..> ScheduledPaymentDateTime
+  OBScheduledPayment3Detail ..> OBInternalScheduleType1Code
+  OBScheduledPayment3Detail ..> Reference
+  OBScheduledPayment3Detail ..> DebtorReference
+  OBScheduledPayment3Detail ..> OBActiveOrHistoricCurrencyAndAmount_1
+  OBScheduledPayment3Detail ..> OBBranchAndFinancialInstitutionIdentification5_1
+  OBScheduledPayment3Detail ..> OBCashAccount5_1
+  OBStandingOrder6 ..> AccountId
+  OBStandingOrder6 ..> StandingOrderId
+  OBStandingOrder6 ..> NextPaymentDateTime
+  OBStandingOrder6 ..> LastPaymentDateTime
+  OBStandingOrder6 ..> NumberOfPayments
+  OBStandingOrder6 ..> ExternalMandateStatus1Code
+  OBStandingOrder6 ..> OBActiveOrHistoricCurrencyAndAmount_2
+  OBStandingOrder6 ..> OBActiveOrHistoricCurrencyAndAmount_3
+  OBStandingOrder6 ..> OBActiveOrHistoricCurrencyAndAmount_11
+  OBStandingOrder6 ..> OBActiveOrHistoricCurrencyAndAmount_4
+  OBStandingOrder6 ..> OBBranchAndFinancialInstitutionIdentification5_1
+  OBStandingOrder6 ..> OBCashAccount5_1
+  OBStandingOrder6 ..> OBSupplementaryData1
+  OBStandingOrder6 ..> OBMandateRelatedInformation1
+  OBStandingOrder6 ..> OBRemittanceInformation2
+  OBStandingOrder6Basic ..> AccountId
+  OBStandingOrder6Basic ..> StandingOrderId
+  OBStandingOrder6Basic ..> NextPaymentDateTime
+  OBStandingOrder6Basic ..> LastPaymentDateTime
+  OBStandingOrder6Basic ..> NumberOfPayments
+  OBStandingOrder6Basic ..> ExternalMandateStatus1Code
+  OBStandingOrder6Basic ..> OBActiveOrHistoricCurrencyAndAmount_2
+  OBStandingOrder6Basic ..> OBActiveOrHistoricCurrencyAndAmount_3
+  OBStandingOrder6Basic ..> OBActiveOrHistoricCurrencyAndAmount_11
+  OBStandingOrder6Basic ..> OBActiveOrHistoricCurrencyAndAmount_4
+  OBStandingOrder6Basic ..> OBSupplementaryData1
+  OBStandingOrder6Basic ..> OBMandateRelatedInformation1
+  OBStandingOrder6Basic ..> OBRemittanceInformation2
+  OBStandingOrder6Detail ..> AccountId
+  OBStandingOrder6Detail ..> StandingOrderId
+  OBStandingOrder6Detail ..> NextPaymentDateTime
+  OBStandingOrder6Detail ..> LastPaymentDateTime
+  OBStandingOrder6Detail ..> NumberOfPayments
+  OBStandingOrder6Detail ..> ExternalMandateStatus1Code
+  OBStandingOrder6Detail ..> OBActiveOrHistoricCurrencyAndAmount_2
+  OBStandingOrder6Detail ..> OBActiveOrHistoricCurrencyAndAmount_3
+  OBStandingOrder6Detail ..> OBActiveOrHistoricCurrencyAndAmount_11
+  OBStandingOrder6Detail ..> OBActiveOrHistoricCurrencyAndAmount_4
+  OBStandingOrder6Detail ..> OBBranchAndFinancialInstitutionIdentification5_1
+  OBStandingOrder6Detail ..> OBCashAccount5_1
+  OBStandingOrder6Detail ..> OBSupplementaryData1
+  OBStandingOrder6Detail ..> OBMandateRelatedInformation1
+  OBStandingOrder6Detail ..> OBRemittanceInformation2
+  OBStatement2 ..> AccountId
+  OBStatement2 ..> StatementId
+  OBStatement2 ..> StatementReference
+  OBStatement2 ..> OBInternalStatementType1Code
+  OBStatement2 ..> StartDateTime
+  OBStatement2 ..> EndDateTime
+  OBStatement2 ..> CreationDateTime
+  OBStatement2Basic ..> AccountId
+  OBStatement2Basic ..> StatementId
+  OBStatement2Basic ..> StatementReference
+  OBStatement2Basic ..> OBInternalStatementType1Code
+  OBStatement2Basic ..> StartDateTime
+  OBStatement2Basic ..> EndDateTime
+  OBStatement2Basic ..> CreationDateTime
+  OBStatement2Detail ..> AccountId
+  OBStatement2Detail ..> StatementId
+  OBStatement2Detail ..> StatementReference
+  OBStatement2Detail ..> OBInternalStatementType1Code
+  OBStatement2Detail ..> StartDateTime
+  OBStatement2Detail ..> EndDateTime
+  OBStatement2Detail ..> CreationDateTime
+  OBTransaction6 ..> AccountId
+  OBTransaction6 ..> TransactionId
+  OBTransaction6 ..> TransactionReference
+  OBTransaction6 ..> StatementReference
+  OBTransaction6 ..> OBCreditDebitCode_1
+  OBTransaction6 ..> ExternalEntryStatus1Code
+  OBTransaction6 ..> OBInternalTransactionMutability1Code
+  OBTransaction6 ..> BookingDateTime
+  OBTransaction6 ..> ValueDateTime
+  OBTransaction6 ..> TransactionInformation
+  OBTransaction6 ..> AddressLine
+  OBTransaction6 ..> OBActiveOrHistoricCurrencyAndAmount_9
+  OBTransaction6 ..> OBActiveOrHistoricCurrencyAndAmount_10
+  OBTransaction6 ..> OBCurrencyExchange5
+  OBTransaction6 ..> OBBankTransactionCodeStructure1
+  OBTransaction6 ..> ProprietaryBankTransactionCodeStructure1
+  OBTransaction6 ..> OBExtendedProprietaryBankTransactionCode
+  OBTransaction6 ..> OBTransactionCashBalance
+  OBTransaction6 ..> OBMerchantDetails1
+  OBTransaction6 ..> OBBranchAndFinancialInstitutionIdentification6_1
+  OBTransaction6 ..> OBCashAccount6_0
+  OBTransaction6 ..> OBBranchAndFinancialInstitutionIdentification6_2
+  OBTransaction6 ..> OBCashAccount6_1
+  OBTransaction6 ..> OBTransactionCardInstrument1
+  OBTransaction6 ..> OBSupplementaryData1
+  OBTransaction6 ..> ExternalCategoryPurpose1Code
+  OBTransaction6 ..> OBExternalPurpose1Code
+  OBTransaction6 ..> OBUltimateCreditor1
+  OBTransaction6 ..> OBUltimateDebtor1
+  OBTransaction6Basic ..> AccountId
+  OBTransaction6Basic ..> TransactionId
+  OBTransaction6Basic ..> TransactionReference
+  OBTransaction6Basic ..> StatementReference
+  OBTransaction6Basic ..> OBCreditDebitCode_1
+  OBTransaction6Basic ..> ExternalEntryStatus1Code
+  OBTransaction6Basic ..> OBInternalTransactionMutability1Code
+  OBTransaction6Basic ..> BookingDateTime
+  OBTransaction6Basic ..> ValueDateTime
+  OBTransaction6Basic ..> AddressLine
+  OBTransaction6Basic ..> OBActiveOrHistoricCurrencyAndAmount_9
+  OBTransaction6Basic ..> OBActiveOrHistoricCurrencyAndAmount_10
+  OBTransaction6Basic ..> OBCurrencyExchange5
+  OBTransaction6Basic ..> OBBankTransactionCodeStructure1
+  OBTransaction6Basic ..> ProprietaryBankTransactionCodeStructure1
+  OBTransaction6Basic ..> OBExtendedProprietaryBankTransactionCode
+  OBTransaction6Basic ..> OBTransactionCardInstrument1
+  OBTransaction6Basic ..> OBSupplementaryData1
+  OBTransaction6Basic ..> ExternalCategoryPurpose1Code
+  OBTransaction6Basic ..> OBExternalPurpose1Code
+  OBTransaction6Detail ..> AccountId
+  OBTransaction6Detail ..> TransactionId
+  OBTransaction6Detail ..> TransactionReference
+  OBTransaction6Detail ..> StatementReference
+  OBTransaction6Detail ..> OBCreditDebitCode_1
+  OBTransaction6Detail ..> ExternalEntryStatus1Code
+  OBTransaction6Detail ..> OBInternalTransactionMutability1Code
+  OBTransaction6Detail ..> BookingDateTime
+  OBTransaction6Detail ..> ValueDateTime
+  OBTransaction6Detail ..> TransactionInformation
+  OBTransaction6Detail ..> AddressLine
+  OBTransaction6Detail ..> OBActiveOrHistoricCurrencyAndAmount_9
+  OBTransaction6Detail ..> OBActiveOrHistoricCurrencyAndAmount_10
+  OBTransaction6Detail ..> OBCurrencyExchange5
+  OBTransaction6Detail ..> OBBankTransactionCodeStructure1
+  OBTransaction6Detail ..> ProprietaryBankTransactionCodeStructure1
+  OBTransaction6Detail ..> OBExtendedProprietaryBankTransactionCode
+  OBTransaction6Detail ..> OBTransactionCashBalance
+  OBTransaction6Detail ..> OBMerchantDetails1
+  OBTransaction6Detail ..> OBBranchAndFinancialInstitutionIdentification6_1
+  OBTransaction6Detail ..> OBCashAccount6_0
+  OBTransaction6Detail ..> OBBranchAndFinancialInstitutionIdentification6_2
+  OBTransaction6Detail ..> OBCashAccount6_1
+  OBTransaction6Detail ..> OBTransactionCardInstrument1
+  OBTransaction6Detail ..> OBSupplementaryData1
+  OBTransaction6Detail ..> ExternalCategoryPurpose1Code
+  OBTransaction6Detail ..> OBExternalPurpose1Code
+  OBTransaction6Detail ..> OBUltimateCreditor1
+  OBTransaction6Detail ..> OBUltimateDebtor1
+  OBTransactionCashBalance ..> OBCreditDebitCode_2
+  OBTransactionCashBalance ..> OBBalanceType1Code
+  OB_OtherCodeType1_0 ..> OB_CodeMnemonic
+  OB_OtherCodeType1_0 ..> Name_4
+  OB_OtherCodeType1_0 ..> Description_3
+  OB_OtherCodeType1_1 ..> OB_CodeMnemonic
+  OB_OtherCodeType1_1 ..> Name_4
+  OB_OtherCodeType1_1 ..> Description_3
+  OB_OtherCodeType1_2 ..> OB_CodeMnemonic
+  OB_OtherCodeType1_2 ..> Name_4
+  OB_OtherCodeType1_2 ..> Description_3
+  OB_OtherCodeType1_3 ..> OB_CodeMnemonic
+  OB_OtherCodeType1_3 ..> Name_4
+  OB_OtherCodeType1_3 ..> Description_3
+  OB_OtherCodeType1_4 ..> OB_CodeMnemonic
+  OB_OtherCodeType1_4 ..> Name_4
+  OB_OtherCodeType1_4 ..> Description_3
+  OB_OtherCodeType1_5 ..> OB_CodeMnemonic
+  OB_OtherCodeType1_5 ..> Name_4
+  OB_OtherCodeType1_5 ..> Description_3
+  OB_OtherCodeType1_6 ..> OB_CodeMnemonic
+  OB_OtherCodeType1_6 ..> Name_4
+  OB_OtherCodeType1_6 ..> Description_3
+  OB_OtherCodeType1_7 ..> OB_CodeMnemonic
+  OB_OtherCodeType1_7 ..> Name_4
+  OB_OtherCodeType1_7 ..> Description_3
+  OB_OtherCodeType1_8 ..> OB_CodeMnemonic
+  OB_OtherCodeType1_8 ..> Name_4
+  OB_OtherCodeType1_8 ..> Description_3
+  OB_OtherFeeChargeDetailType ..> OB_CodeMnemonic
+  OB_OtherFeeChargeDetailType ..> OB_FeeCategory1Code
+  OB_OtherFeeChargeDetailType ..> Name_4
+  OB_OtherFeeChargeDetailType ..> Description_3
+
+  class ExternalCreditorReferenceType1Code{
+    <<enumeration>>
+    DISP
+    FXDR
+    PUOR
+    RPIN
+    RADM
+    SCOR
+  }
+  class ExternalDocumentType1Code{
+    <<enumeration>>
+    CINV
+    CNFA
+    CONT
+    CREN
+    DEBN
+    DISP
+    DNFA
+    HIRI
+    INVS
+    MSIN
+    PROF
+    PUOR
+    QUOT
+    SBIN
+    SPRR
+    TISH
+  }
+  class OBReferredDocumentInformation{
+    +string: Issuer
+    +string: Number
+    +date: RelatedDate
+    +string[]: LineDetails
+    +ExternalDocumentType1Code: Code;
+  }
+  class OBRemittanceInformation2{
+    +string[]: Unstructured
+    +OBRemittanceInformationStructured[]: Structured;
+  }
+  class OBRemittanceInformationStructured{
+    +number: ReferredDocumentAmount
+    +object: CreditorReferenceInformation
+    +string: TaxRemittance
+    +string[]: AdditionalRemittanceInformation
+    +OBReferredDocumentInformation[]: ReferredDocumentInformation;
+    +Identification_3: Invoicer;
+    +Identification_4: Invoicee;
+  }
+  class OBUltimateCreditor1{
+    +string: Name
+    +string: Identification
+    +LEI: LEI;
+    +OBInternalAccountIdentification4Code: SchemeName;
+    +OBPostalAddress7: PostalAddress;
+  }
+  class OBUltimateDebtor1{
+    +string: Name
+    +string: Identification
+    +LEI: LEI;
+    +OBInternalAccountIdentification4Code: SchemeName;
+    +OBPostalAddress7: PostalAddress;
+  }
+  class OBFrequency6{
+    +number: CountPerPeriod
+    +PointInTime: PointInTime;
+  }
+  class PointInTime{
+  }
+  class OBFrequency6Code{
+    <<enumeration>>
+    ADHO
+    YEAR
+    DAIL
+    FRTN
+    INDA
+    MNTH
+    QURT
+    MIAN
+    WEEK
+    WODL
+    FOWK
+    TWMH
+    FOMH
+    FIMH
+    ALMH
+    NONE
+  }
+  class OBProxy1{
+    +string: Identification
+    +string: Type
+    +ExternalProxyAccountType1Code: Code;
+  }
+  class ExternalProxyAccountType1Code{
+    <<enumeration>>
+    TELE
+    EMAL
+    DNAM
+    CINC
+    COTX
+    COID
+    CUST
+    DRLC
+    EIDN
+    EWAL
+    PVTX
+    LEIC
+    MBNO
+    NIDN
+    CCPT
+    SHID
+    SOSE
+    TOKN
+    UBIL
+    VIPN
+    BIID
+  }
+  class AccountId{
+  }
+  class ActiveOrHistoricCurrencyCode_0{
+  }
+  class ActiveOrHistoricCurrencyCode_1{
+  }
+  class AddressLine{
+  }
+  class BeneficiaryId{
+  }
+  class BookingDateTime{
+  }
+  class BuildingName{
+  }
+  class BuildingNumber{
+  }
+  class CareOf{
+  }
+  class CountryCode{
+  }
+  class CountrySubDivision{
+  }
+  class CreationDateTime{
+  }
+  class Date{
+  }
+  class DateTime{
+  }
+  class DebtorReference{
+  }
+  class Description_0{
+  }
+  class Description_1{
+  }
+  class Description_2{
+  }
+  class Description_3{
+  }
+  class DirectDebitId{
+  }
+  class DistrictName{
+  }
+  class EmailAddress{
+  }
+  class EndDateTime{
+  }
+  class File{
+  }
+  class FinalPaymentDateTime{
+  }
+  class FirstPaymentDateTime{
+  }
+  class Floor{
+  }
+  class Frequency_1{
+  }
+  class FullLegalName{
+  }
+  class ISODateTime{
+  }
+  class Identification_0{
+  }
+  class Identification_1{
+  }
+  class Identification_2{
+  }
+  class Identification_3{
+  }
+  class Identification_4{
+  }
+  class LastPaymentDateTime{
+  }
+  class LEI{
+  }
+  class Links{
+    +string: Self
+    +string: First
+    +string: Prev
+    +string: Next
+    +string: Last
+  }
+  class MandateIdentification{
+  }
+  class MaturityDate{
+  }
+  class Meta{
+    +number: TotalPages
+    +ISODateTime: FirstAvailableDateTime;
+    +ISODateTime: LastAvailableDateTime;
+  }
+  class Name_0{
+  }
+  class Name_1{
+  }
+  class Name_2{
+  }
+  class Name_3{
+  }
+  class Name_4{
+  }
+  class NextPaymentDateTime{
+  }
+  class Nickname{
+  }
+  class NumberOfPayments{
+  }
+  class Number_0{
+  }
+  class Number_1{
+  }
+  class OBAccount6{
+    +object[]: Account
+    +AccountId: AccountId;
+    +OBInternalAccountStatus1Code: Status;
+    +StatusUpdateDateTime: StatusUpdateDateTime;
+    +ActiveOrHistoricCurrencyCode_0: Currency;
+    +OBInternalAccountType1Code: AccountCategory;
+    +OBExternalAccountSubType1Code: AccountTypeCode;
+    +Description_0: Description;
+    +Nickname: Nickname;
+    +OpeningDate: OpeningDate;
+    +MaturityDate: MaturityDate;
+    +OBInternalSwitchStatusCode: SwitchStatus;
+    +StatementFrequencyAndFormat: StatementFrequencyAndFormat;
+    +OBBranchAndFinancialInstitutionIdentification5_0: Servicer;
+  }
+  class OBAccount6Basic{
+    +AccountId: AccountId;
+    +OBInternalAccountStatus1Code: Status;
+    +StatusUpdateDateTime: StatusUpdateDateTime;
+    +ActiveOrHistoricCurrencyCode_0: Currency;
+    +OBInternalAccountType1Code: AccountCategory;
+    +OBExternalAccountSubType1Code: AccountTypeCode;
+    +Description_0: Description;
+    +Nickname: Nickname;
+    +OpeningDate: OpeningDate;
+    +MaturityDate: MaturityDate;
+    +OBInternalSwitchStatusCode: SwitchStatus;
+  }
+  class OBAccount6Detail{
+    +object[]: Account
+    +AccountId: AccountId;
+    +OBInternalAccountStatus1Code: Status;
+    +StatusUpdateDateTime: StatusUpdateDateTime;
+    +ActiveOrHistoricCurrencyCode_0: Currency;
+    +OBInternalAccountType1Code: AccountCategory;
+    +OBExternalAccountSubType1Code: AccountTypeCode;
+    +Description_0: Description;
+    +Nickname: Nickname;
+    +OpeningDate: OpeningDate;
+    +MaturityDate: MaturityDate;
+    +OBInternalSwitchStatusCode: SwitchStatus;
+    +StatementFrequencyAndFormat: StatementFrequencyAndFormat;
+    +OBBranchAndFinancialInstitutionIdentification5_0: Servicer;
+  }
+  class OBInternalAccountStatus1Code{
+    <<enumeration>>
+    Deleted
+    Disabled
+    Enabled
+    Pending
+    ProForma
+  }
+  class OBActiveCurrencyAndAmount_SimpleType{
+  }
+  class OBActiveOrHistoricCurrencyAndAmount_0{
+    +OBActiveCurrencyAndAmount_SimpleType: Amount;
+    +ActiveOrHistoricCurrencyCode_1: Currency;
+  }
+  class OBActiveOrHistoricCurrencyAndAmount_1{
+    +OBActiveCurrencyAndAmount_SimpleType: Amount;
+    +ActiveOrHistoricCurrencyCode_1: Currency;
+  }
+  class OBActiveOrHistoricCurrencyAndAmount_10{
+    +OBActiveCurrencyAndAmount_SimpleType: Amount;
+    +ActiveOrHistoricCurrencyCode_1: Currency;
+  }
+  class OBActiveOrHistoricCurrencyAndAmount_11{
+    +OBActiveCurrencyAndAmount_SimpleType: Amount;
+    +ActiveOrHistoricCurrencyCode_1: Currency;
+  }
+  class OBActiveOrHistoricCurrencyAndAmount_2{
+    +OBActiveCurrencyAndAmount_SimpleType: Amount;
+    +ActiveOrHistoricCurrencyCode_1: Currency;
+  }
+  class OBActiveOrHistoricCurrencyAndAmount_3{
+    +OBActiveCurrencyAndAmount_SimpleType: Amount;
+    +ActiveOrHistoricCurrencyCode_1: Currency;
+  }
+  class OBActiveOrHistoricCurrencyAndAmount_4{
+    +OBActiveCurrencyAndAmount_SimpleType: Amount;
+    +ActiveOrHistoricCurrencyCode_1: Currency;
+  }
+  class OBActiveOrHistoricCurrencyAndAmount_5{
+    +OBActiveCurrencyAndAmount_SimpleType: Amount;
+    +ActiveOrHistoricCurrencyCode_1: Currency;
+  }
+  class OBActiveOrHistoricCurrencyAndAmount_6{
+    +OBActiveCurrencyAndAmount_SimpleType: Amount;
+    +ActiveOrHistoricCurrencyCode_1: Currency;
+  }
+  class OBActiveOrHistoricCurrencyAndAmount_7{
+    +OBActiveCurrencyAndAmount_SimpleType: Amount;
+    +ActiveOrHistoricCurrencyCode_1: Currency;
+  }
+  class OBActiveOrHistoricCurrencyAndAmount_8{
+    +OBActiveCurrencyAndAmount_SimpleType: Amount;
+    +ActiveOrHistoricCurrencyCode_1: Currency;
+    +OBExternalBalanceSubType1Code: SubType;
+  }
+  class OBActiveOrHistoricCurrencyAndAmount_9{
+    +OBActiveCurrencyAndAmount_SimpleType: Amount;
+    +ActiveOrHistoricCurrencyCode_1: Currency;
+  }
+  class OBAddressTypeCode{
+    <<enumeration>>
+    Business
+    Correspondence
+    DeliveryTo
+    MailTo
+    POBox
+    Postal
+    Residential
+    Statement
+  }
+  class OBAddressType2Code{
+    <<enumeration>>
+    BIZZ
+    DLVY
+    MLTO
+    PBOX
+    ADDR
+    HOME
+    CORR
+    STAT
+  }
+  class OBBCAData1{
+    +object: ProductDetails
+    +object: CreditInterest
+    +object: Overdraft
+    +object[]: OtherFeesCharges
+  }
+  class OBBalanceType1Code{
+    <<enumeration>>
+    CLAV
+    CLBD
+    FWAV
+    INFO
+    ITAV
+    ITBD
+    OPAV
+    OPBD
+    PRCD
+    XPCD
+  }
+  class OBBankTransactionCodeStructure1{
+    +string: Code
+    +string: SubCode
+  }
+  class OBBeneficiary5{
+    +AccountId: AccountId;
+    +BeneficiaryId: BeneficiaryId;
+    +OBInternalBeneficiaryType1Code: BeneficiaryType;
+    +Reference: Reference;
+    +OBSupplementaryData1: SupplementaryData;
+    +OBBranchAndFinancialInstitutionIdentification6_0: CreditorAgent;
+    +OBCashAccount5_0: CreditorAccount;
+  }
+  class OBBeneficiary5Basic{
+    +AccountId: AccountId;
+    +BeneficiaryId: BeneficiaryId;
+    +OBInternalBeneficiaryType1Code: BeneficiaryType;
+    +Reference: Reference;
+    +OBSupplementaryData1: SupplementaryData;
+  }
+  class OBBeneficiary5Detail{
+    +AccountId: AccountId;
+    +BeneficiaryId: BeneficiaryId;
+    +OBInternalBeneficiaryType1Code: BeneficiaryType;
+    +Reference: Reference;
+    +OBSupplementaryData1: SupplementaryData;
+    +OBBranchAndFinancialInstitutionIdentification6_0: CreditorAgent;
+    +OBCashAccount5_0: CreditorAccount;
+  }
+  class OBBranchAndFinancialInstitutionIdentification5_0{
+    +OBInternalFinancialInstitutionIdentification4Code: SchemeName;
+    +Identification_1: Identification;
+    +Name_1: Name;
+  }
+  class OBBranchAndFinancialInstitutionIdentification5_1{
+    +OBInternalFinancialInstitutionIdentification4Code: SchemeName;
+    +Identification_1: Identification;
+    +Name_1: Name;
+    +OBPostalAddress7: PostalAddress;
+    +LEI: LEI;
+  }
+  class OBBranchAndFinancialInstitutionIdentification6_0{
+    +OBInternalFinancialInstitutionIdentification4Code: SchemeName;
+    +Identification_1: Identification;
+    +Name_1: Name;
+    +OBPostalAddress7: PostalAddress;
+    +LEI: LEI;
+  }
+  class OBBranchAndFinancialInstitutionIdentification6_1{
+    +OBInternalFinancialInstitutionIdentification4Code: SchemeName;
+    +Identification_2: Identification;
+    +Name_1: Name;
+    +LEI: LEI;
+    +OBPostalAddress7: PostalAddress;
+  }
+  class OBBranchAndFinancialInstitutionIdentification6_2{
+    +OBInternalFinancialInstitutionIdentification4Code: SchemeName;
+    +Identification_2: Identification;
+    +Name_1: Name;
+    +LEI: LEI;
+    +OBPostalAddress7: PostalAddress;
+  }
+  class OBCashAccount5_0{
+    +OBInternalAccountIdentification4Code: SchemeName;
+    +Identification_0: Identification;
+    +Name_0: Name;
+    +SecondaryIdentification: SecondaryIdentification;
+    +OBProxy1: Proxy;
+  }
+  class OBCashAccount5_1{
+    +string: Identification
+    +OBInternalAccountIdentification4Code: SchemeName;
+    +Name_0: Name;
+    +SecondaryIdentification: SecondaryIdentification;
+    +OBProxy1: Proxy;
+  }
+  class OBCashAccount6_0{
+    +OBInternalAccountIdentification4Code: SchemeName;
+    +Identification_0: Identification;
+    +Name_0: Name;
+    +SecondaryIdentification: SecondaryIdentification;
+    +OBProxy1: Proxy;
+  }
+  class OBCashAccount6_1{
+    +OBInternalAccountIdentification4Code: SchemeName;
+    +Identification_0: Identification;
+    +Name_0: Name;
+    +SecondaryIdentification: SecondaryIdentification;
+    +OBProxy1: Proxy;
+  }
+  class ExternalCategoryPurpose1Code{
+    <<enumeration>>
+    BONU
+    CASH
+    CBLK
+    CCRD
+    CGWV
+    CIPC
+    CONC
+    CORT
+    DCRD
+    DIVI
+    DVPM
+    EPAY
+    FCDT
+    FCIN
+    FCOL
+    GOVT
+    GP2P
+    HEDG
+    ICCP
+    IDCP
+    INTC
+    INTE
+    LBOX
+    LOAN
+    MP2B
+    MP2P
+    OTHR
+    PENS
+    RPRE
+    RRCT
+    RVPM
+    SALA
+    SECU
+    SSBE
+    SUPP
+    SWEP
+    TAXS
+    TOPG
+    TRAD
+    TREA
+    VATX
+    VOST
+    WHLD
+    ZABA
+  }
+  class OBExternalMandateClassification1Code{
+    <<enumeration>>
+    FIXE
+    USGB
+    VARI
+  }
+  class OBCommunicationMethod{
+    <<enumeration>>
+    EMAL
+    FAXI
+    FILE
+    ONLI
+    POST
+  }
+  class OBCreditDebitCode_0{
+    <<enumeration>>
+    Credit
+    Debit
+  }
+  class OBCreditDebitCode_1{
+    <<enumeration>>
+    Credit
+    Debit
+  }
+  class OBCreditDebitCode_2{
+    <<enumeration>>
+    Credit
+    Debit
+  }
+  class OBCurrencyExchange5{
+    +string: SourceCurrency
+    +string: TargetCurrency
+    +string: UnitCurrency
+    +number: ExchangeRate
+    +string: ContractIdentification
+    +date: QuotationDate
+    +object: InstructedAmount
+  }
+  class ExternalEntryStatus1Code{
+    <<enumeration>>
+    BOOK
+    FUTR
+    INFO
+    PDNG
+    RJCT
+  }
+  class OBInternalTransactionMutability1Code{
+    <<enumeration>>
+    Mutable
+    Immutable
+  }
+  class OBError1{
+    +string: Message
+    +string: Path
+    +string: Url
+    +OBExternalStatusReason1Code: ErrorCode;
+  }
+  class OBErrorResponse1{
+    +string: Id
+    +string: Code
+    +string: Message
+    +OBError1[]: Errors;
+  }
+  class OBInternalAccountIdentification4Code{
+  }
+  class OBInternalAccountRole1Code{
+  }
+  class OBExternalAccountSubType1Code{
+    <<enumeration>>
+    CACC
+    CARD
+    CASH
+    CHAR
+    CISH
+    COMM
+    CPAC
+    LLSV
+    LOAN
+    MGLD
+    MOMA
+    NREX
+    ODFT
+    ONDP
+    OTHR
+    SACC
+    SLRY
+    SVGS
+    TAXE
+    TRAN
+    TRAS
+    VACC
+    NFCA
+    MORT
+    WALT
+  }
+  class OBInternalAccountType1Code{
+    <<enumeration>>
+    Business
+    Personal
+  }
+  class OBExternalBalanceSubType1Code{
+    <<enumeration>>
+    BCUR
+    LCUR
+  }
+  class OBInternalFinancialInstitutionIdentification4Code{
+  }
+  class OBInternalSwitchStatusCode{
+  }
+  class OBInternalLegalStructureType1Code{
+  }
+  class OBInternalPartyType1Code{
+    <<enumeration>>
+    Delegate
+    Joint
+    Sole
+  }
+  class OBExternalPurpose1Code{
+    <<enumeration>>
+    BKDF
+    BKFE
+    BKFM
+    BKIP
+    BKPP
+    CBLK
+    CDCB
+    CDCD
+    CDCS
+    CDDP
+    CDOC
+    CDQC
+    ETUP
+    FCOL
+    MTUP
+    ACCT
+    CASH
+    COLL
+    CSDB
+    DEPT
+    INTC
+    INTP
+    LIMA
+    NETT
+    BFWD
+    CCIR
+    CCPC
+    CCPM
+    CCSM
+    CRDS
+    CRPR
+    CRSP
+    CRTL
+    EQPT
+    EQUS
+    EXPT
+    EXTD
+    FIXI
+    FWBC
+    FWCC
+    FWSB
+    FWSC
+    MARG
+    MBSB
+    MBSC
+    MGCC
+    MGSC
+    OCCC
+    OPBC
+    OPCC
+    OPSB
+    OPSC
+    OPTN
+    OTCD
+    REPO
+    RPBC
+    RPCC
+    RPSB
+    RPSC
+    RVPO
+    SBSC
+    SCIE
+    SCIR
+    SCRP
+    SHBC
+    SHCC
+    SHSL
+    SLEB
+    SLOA
+    SWBC
+    SWCC
+    SWPT
+    SWSB
+    SWSC
+    TBAS
+    TBBC
+    TBCC
+    TRCP
+    AGRT
+    AREN
+    BEXP
+    BOCE
+    COMC
+    CPYR
+    GDDS
+    GDSV
+    GSCB
+    LICF
+    MP2B
+    POPE
+    ROYA
+    SCVE
+    SERV
+    SUBS
+    SUPP
+    TRAD
+    CHAR
+    COMT
+    MP2P
+    ECPG
+    ECPR
+    ECPU
+    EPAY
+    CLPR
+    COMP
+    DBTC
+    GOVI
+    HLRP
+    HLST
+    INPC
+    INPR
+    INSC
+    INSU
+    INTE
+    LBRI
+    LIFI
+    LOAN
+    LOAR
+    PENO
+    PPTI
+    RELG
+    RINP
+    TRFD
+    FORW
+    FXNT
+    ADMG
+    ADVA
+    BCDM
+    BCFG
+    BLDM
+    BNET
+    CBFF
+    CBFR
+    CCRD
+    CDBL
+    CFEE
+    CGDD
+    CORT
+    COST
+    CPKC
+    DCRD
+    DSMT
+    DVPM
+    EDUC
+    FACT
+    FAND
+    FCPM
+    FEES
+    GIFT
+    GOVT
+    ICCP
+    IDCP
+    IHRP
+    INSM
+    IVPT
+    MCDM
+    MCFG
+    MSVC
+    NOWS
+    OCDM
+    OCFG
+    OFEE
+    OTHR
+    PADD
+    PTSP
+    RCKE
+    RCPT
+    REBT
+    REFU
+    RENT
+    REOD
+    RIMB
+    RPNT
+    RRBN
+    RRCT
+    RRTP
+    RVPM
+    SLPI
+    SPLT
+    STDY
+    TBAN
+    TBIL
+    TCSC
+    TELI
+    TMPG
+    TPRI
+    TPRP
+    TRNC
+    TRVC
+    WEBI
+    IPAY
+    IPCA
+    IPDO
+    IPEA
+    IPEC
+    IPEW
+    IPPS
+    IPRT
+    IPU2
+    IPUW
+    ANNI
+    CAFI
+    CFDI
+    CMDT
+    DERI
+    DIVD
+    FREX
+    HEDG
+    INVS
+    PRME
+    SAVG
+    SECU
+    SEPI
+    TREA
+    UNIT
+    FNET
+    FUTR
+    ANTS
+    CVCF
+    DMEQ
+    DNTS
+    HLTC
+    HLTI
+    HSPC
+    ICRF
+    LTCF
+    MAFC
+    MARF
+    MDCS
+    VIEW
+    CDEP
+    SWFP
+    SWPP
+    SWRS
+    SWUF
+    ADCS
+    AEMP
+    ALLW
+    ALMY
+    BBSC
+    BECH
+    BENE
+    BONU
+    CCHD
+    COMM
+    CSLP
+    GFRP
+    GVEA
+    GVEB
+    GVEC
+    GVED
+    GWLT
+    HREC
+    PAYR
+    PEFC
+    PENS
+    PRCP
+    RHBS
+    SALA
+    SPSP
+    SSBE
+    LBIN
+    LCOL
+    LFEE
+    LMEQ
+    LMFI
+    LMRK
+    LREB
+    LREV
+    LSFL
+    ESTX
+    FWLV
+    GSTX
+    HSTX
+    INTX
+    NITX
+    PTXP
+    RDTX
+    TAXS
+    VATX
+    WHLD
+    TAXR
+    B112
+    BR12
+    TLRF
+    TLRR
+    AIRB
+    BUSB
+    FERB
+    RLWY
+    TRPT
+    CBTV
+    ELEC
+    ENRG
+    GASB
+    NWCH
+    NWCM
+    OTLC
+    PHON
+    UBIL
+    WTER
+    BOND
+    CABD
+    CAEQ
+    CBCR
+    DBCR
+    DICL
+    EQTS
+    FLCR
+    EFTC
+    EFTD
+    MOMA
+    RAPI
+    GAMB
+    LOTT
+    AMEX
+    SASW
+    AUCO
+    PCOM
+    PDEP
+    PLDS
+    PLRF
+    GAFA
+    GAHO
+    CPEN
+    DEPD
+    RETL
+    DEBT
+  }
+  class OBInternalScheduleType1Code{
+    <<enumeration>>
+    Arrival
+    Execution
+  }
+  class ExternalMandateStatus1Code{
+    <<enumeration>>
+    ACTV
+    CANC
+    EXPI
+    SUSP
+  }
+  class OBInternalStatementAmountType1Code{
+  }
+  class OBInternalStatementBenefitType1Code{
+  }
+  class OBInternalStatementDateTimeType1Code{
+  }
+  class OBInternalStatementFeeFrequency1Code{
+  }
+  class OBInternalStatementFeeRateType1Code{
+  }
+  class OBInternalStatementFeeType1Code{
+  }
+  class OBInternalStatementInterestFrequency1Code{
+  }
+  class OBExternalStatementInterestRateType1Code{
+  }
+  class OBInternalStatementInterestType1Code{
+  }
+  class OBInternalStatementRateType1Code{
+  }
+  class OBInternalStatementType1Code{
+    <<enumeration>>
+    AccountClosure
+    AccountOpening
+    Annual
+    Interim
+    RegularPeriodic
+  }
+  class OBInternalStatementValueType1Code{
+  }
+  class OBFrequency2{
+    <<enumeration>>
+    YEAR
+    DAIL
+    INDA
+    MNTH
+    QURT
+    MIAN
+    TEND
+    MOVE
+    WEEK
+  }
+  class OBFrequencyPeriodType{
+    <<enumeration>>
+    ADHO
+    YEAR
+    DAIL
+    INDA
+    MNTH
+    QURT
+    MIAN
+    WEEK
+  }
+  class OBFileFormat{
+    <<enumeration>>
+    DPDF
+    DXML
+    SDSH
+    WORD
+    XSLT
+    DCSV
+  }
+  class OBExternalStatusReason1Code{
+  }
+  class OBMandateRelatedInformation1{
+    +string: MandateIdentification
+    +date: FirstPaymentDateTime
+    +date: RecurringPaymentDateTime
+    +date: FinalPaymentDateTime
+    +string: Reason
+    +OBExternalMandateClassification1Code: Classification;
+    +ExternalCategoryPurpose1Code: CategoryPurposeCode;
+    +OBFrequency6: Frequency;
+  }
+  class OBMerchantDetails1{
+    +string: MerchantName
+    +string: MerchantCategoryCode
+  }
+  class OBPCAData1{
+    +object: ProductDetails
+    +object: CreditInterest
+    +object: Overdraft
+    +object: OtherFeesCharges
+  }
+  class OBParty2{
+    +bool: BeneficialOwnership
+    +PartyId: PartyId;
+    +PartyNumber: PartyNumber;
+    +OBInternalPartyType1Code: PartyType;
+    +Name_3: Name;
+    +FullLegalName: FullLegalName;
+    +OBInternalLegalStructureType1Code: LegalStructure;
+    +LEI: LEI;
+    +OBInternalAccountRole1Code: AccountRole;
+    +EmailAddress: EmailAddress;
+    +PhoneNumber_0: Phone;
+    +PhoneNumber_1: Mobile;
+    +OBPartyRelationships1: Relationships;
+    +OBPostalAddress7[]: Address;
+  }
+  class OBPartyRelationships1{
+    +object: Account
+  }
+  class OBPostalAddress7{
+    +string: Department
+    +string: SubDepartment
+    +string: CountrySubDivision
+    +string: Country
+    +string[]: AddressLine
+    +OBAddressType2Code: AddressType;
+    +StreetName: StreetName;
+    +BuildingNumber: BuildingNumber;
+    +BuildingName: BuildingName;
+    +Floor: Floor;
+    +UnitNumber: UnitNumber;
+    +Room: Room;
+    +PostBox: PostBox;
+    +TownName: TownLocationName;
+    +DistrictName: DistrictName;
+    +CareOf: CareOf;
+    +PostCode: PostCode;
+    +TownName: TownName;
+  }
+  class OBRate1_0{
+  }
+  class OBRate1_1{
+  }
+  class OBReadAccount6{
+    +object: Data
+    +Links: Links;
+    +Meta: Meta;
+  }
+  class OBReadBalance1{
+    +object: Data
+    +Links: Links;
+    +Meta: Meta;
+  }
+  class OBReadBeneficiary5{
+    +object: Data
+    +Links: Links;
+    +Meta: Meta;
+  }
+  class OBReadConsent1{
+    +object: Data
+    +OBRisk2: Risk;
+  }
+  class OBReadConsentResponse1{
+    +object: Data
+    +OBRisk2: Risk;
+    +Links: Links;
+    +Meta: Meta;
+  }
+  class OBReadDataStatement2{
+    +OBStatement2[]: Statement;
+  }
+  class OBReadDataTransaction6{
+    +OBTransaction6[]: Transaction;
+  }
+  class OBReadDirectDebit2{
+    +object: Data
+    +Links: Links;
+    +Meta: Meta;
+  }
+  class OBReadOffer1{
+    +object: Data
+    +Links: Links;
+    +Meta: Meta;
+  }
+  class OBReadParty2{
+    +object: Data
+    +Links: Links;
+    +Meta: Meta;
+  }
+  class OBReadParty3{
+    +object: Data
+    +Links: Links;
+    +Meta: Meta;
+  }
+  class OBReadProduct2{
+    +object: Data
+    +Links: Links;
+    +Meta: Meta;
+  }
+  class OBReadScheduledPayment3{
+    +object: Data
+    +Links: Links;
+    +Meta: Meta;
+  }
+  class OBReadStandingOrder6{
+    +object: Data
+    +Links: Links;
+    +Meta: Meta;
+  }
+  class OBReadStatement2{
+    +OBReadDataStatement2: Data;
+    +Links: Links;
+    +Meta: Meta;
+  }
+  class OBReadTransaction6{
+    +OBReadDataTransaction6: Data;
+    +Links: Links;
+    +Meta: Meta;
+  }
+  class OBScheduledPayment3{
+    +AccountId: AccountId;
+    +ScheduledPaymentId: ScheduledPaymentId;
+    +ScheduledPaymentDateTime: ScheduledPaymentDateTime;
+    +OBInternalScheduleType1Code: ScheduledType;
+    +Reference: Reference;
+    +DebtorReference: DebtorReference;
+    +OBActiveOrHistoricCurrencyAndAmount_1: InstructedAmount;
+    +OBBranchAndFinancialInstitutionIdentification5_1: CreditorAgent;
+    +OBCashAccount5_1: CreditorAccount;
+  }
+  class OBScheduledPayment3Basic{
+    +AccountId: AccountId;
+    +ScheduledPaymentId: ScheduledPaymentId;
+    +ScheduledPaymentDateTime: ScheduledPaymentDateTime;
+    +OBInternalScheduleType1Code: ScheduledType;
+    +Reference: Reference;
+    +DebtorReference: DebtorReference;
+    +OBActiveOrHistoricCurrencyAndAmount_1: InstructedAmount;
+  }
+  class OBScheduledPayment3Detail{
+    +AccountId: AccountId;
+    +ScheduledPaymentId: ScheduledPaymentId;
+    +ScheduledPaymentDateTime: ScheduledPaymentDateTime;
+    +OBInternalScheduleType1Code: ScheduledType;
+    +Reference: Reference;
+    +DebtorReference: DebtorReference;
+    +OBActiveOrHistoricCurrencyAndAmount_1: InstructedAmount;
+    +OBBranchAndFinancialInstitutionIdentification5_1: CreditorAgent;
+    +OBCashAccount5_1: CreditorAccount;
+  }
+  class OBStandingOrder6{
+    +AccountId: AccountId;
+    +StandingOrderId: StandingOrderId;
+    +NextPaymentDateTime: NextPaymentDateTime;
+    +LastPaymentDateTime: LastPaymentDateTime;
+    +NumberOfPayments: NumberOfPayments;
+    +ExternalMandateStatus1Code: StandingOrderStatusCode;
+    +OBActiveOrHistoricCurrencyAndAmount_2: FirstPaymentAmount;
+    +OBActiveOrHistoricCurrencyAndAmount_3: NextPaymentAmount;
+    +OBActiveOrHistoricCurrencyAndAmount_11: LastPaymentAmount;
+    +OBActiveOrHistoricCurrencyAndAmount_4: FinalPaymentAmount;
+    +OBBranchAndFinancialInstitutionIdentification5_1: CreditorAgent;
+    +OBCashAccount5_1: CreditorAccount;
+    +OBSupplementaryData1: SupplementaryData;
+    +OBMandateRelatedInformation1: MandateRelatedInformation;
+    +OBRemittanceInformation2: RemittanceInformation;
+  }
+  class OBStandingOrder6Basic{
+    +AccountId: AccountId;
+    +StandingOrderId: StandingOrderId;
+    +NextPaymentDateTime: NextPaymentDateTime;
+    +LastPaymentDateTime: LastPaymentDateTime;
+    +NumberOfPayments: NumberOfPayments;
+    +ExternalMandateStatus1Code: StandingOrderStatusCode;
+    +OBActiveOrHistoricCurrencyAndAmount_2: FirstPaymentAmount;
+    +OBActiveOrHistoricCurrencyAndAmount_3: NextPaymentAmount;
+    +OBActiveOrHistoricCurrencyAndAmount_11: LastPaymentAmount;
+    +OBActiveOrHistoricCurrencyAndAmount_4: FinalPaymentAmount;
+    +OBSupplementaryData1: SupplementaryData;
+    +OBMandateRelatedInformation1: MandateRelatedInformation;
+    +OBRemittanceInformation2: RemittanceInformation;
+  }
+  class OBStandingOrder6Detail{
+    +AccountId: AccountId;
+    +StandingOrderId: StandingOrderId;
+    +NextPaymentDateTime: NextPaymentDateTime;
+    +LastPaymentDateTime: LastPaymentDateTime;
+    +NumberOfPayments: NumberOfPayments;
+    +ExternalMandateStatus1Code: StandingOrderStatusCode;
+    +OBActiveOrHistoricCurrencyAndAmount_2: FirstPaymentAmount;
+    +OBActiveOrHistoricCurrencyAndAmount_3: NextPaymentAmount;
+    +OBActiveOrHistoricCurrencyAndAmount_11: LastPaymentAmount;
+    +OBActiveOrHistoricCurrencyAndAmount_4: FinalPaymentAmount;
+    +OBBranchAndFinancialInstitutionIdentification5_1: CreditorAgent;
+    +OBCashAccount5_1: CreditorAccount;
+    +OBSupplementaryData1: SupplementaryData;
+    +OBMandateRelatedInformation1: MandateRelatedInformation;
+    +OBRemittanceInformation2: RemittanceInformation;
+  }
+  class OBStatement2{
+    +string[]: StatementDescription
+    +object[]: StatementBenefit
+    +object[]: StatementFee
+    +object[]: StatementInterest
+    +object[]: StatementAmount
+    +object[]: StatementDateTime
+    +object[]: StatementRate
+    +object[]: StatementValue
+    +object: TotalValue
+    +AccountId: AccountId;
+    +StatementId: StatementId;
+    +StatementReference: StatementReference;
+    +OBInternalStatementType1Code: Type;
+    +StartDateTime: StartDateTime;
+    +EndDateTime: EndDateTime;
+    +CreationDateTime: CreationDateTime;
+  }
+  class OBStatement2Basic{
+    +string[]: StatementDescription
+    +object[]: StatementBenefit
+    +object[]: StatementFee
+    +object[]: StatementInterest
+    +object[]: StatementDateTime
+    +object[]: StatementRate
+    +object[]: StatementValue
+    +object: TotalValue
+    +AccountId: AccountId;
+    +StatementId: StatementId;
+    +StatementReference: StatementReference;
+    +OBInternalStatementType1Code: Type;
+    +StartDateTime: StartDateTime;
+    +EndDateTime: EndDateTime;
+    +CreationDateTime: CreationDateTime;
+  }
+  class OBStatement2Detail{
+    +string[]: StatementDescription
+    +object[]: StatementBenefit
+    +object[]: StatementFee
+    +object[]: StatementInterest
+    +object[]: StatementAmount
+    +object[]: StatementDateTime
+    +object[]: StatementRate
+    +object[]: StatementValue
+    +object: TotalValue
+    +AccountId: AccountId;
+    +StatementId: StatementId;
+    +StatementReference: StatementReference;
+    +OBInternalStatementType1Code: Type;
+    +StartDateTime: StartDateTime;
+    +EndDateTime: EndDateTime;
+    +CreationDateTime: CreationDateTime;
+  }
+  class OBStatusReason{
+    +string: StatusReasonCode
+    +string: StatusReasonDescription
+    +string: Path
+  }
+  class OBSupplementaryData1{
+  }
+  class OBTransaction6{
+    +AccountId: AccountId;
+    +TransactionId: TransactionId;
+    +TransactionReference: TransactionReference;
+    +StatementReference[]: StatementReference;
+    +OBCreditDebitCode_1: CreditDebitIndicator;
+    +ExternalEntryStatus1Code: Status;
+    +OBInternalTransactionMutability1Code: TransactionMutability;
+    +BookingDateTime: BookingDateTime;
+    +ValueDateTime: ValueDateTime;
+    +TransactionInformation: TransactionInformation;
+    +AddressLine: AddressLine;
+    +OBActiveOrHistoricCurrencyAndAmount_9: Amount;
+    +OBActiveOrHistoricCurrencyAndAmount_10: ChargeAmount;
+    +OBCurrencyExchange5: CurrencyExchange;
+    +OBBankTransactionCodeStructure1: BankTransactionCode;
+    +ProprietaryBankTransactionCodeStructure1: ProprietaryBankTransactionCode;
+    +OBExtendedProprietaryBankTransactionCode[]: ExtendedProprietaryBankTransactionCodes;
+    +OBTransactionCashBalance: Balance;
+    +OBMerchantDetails1: MerchantDetails;
+    +OBBranchAndFinancialInstitutionIdentification6_1: CreditorAgent;
+    +OBCashAccount6_0: CreditorAccount;
+    +OBBranchAndFinancialInstitutionIdentification6_2: DebtorAgent;
+    +OBCashAccount6_1: DebtorAccount;
+    +OBTransactionCardInstrument1: CardInstrument;
+    +OBSupplementaryData1: SupplementaryData;
+    +ExternalCategoryPurpose1Code: CategoryPurposeCode;
+    +OBExternalPurpose1Code: PaymentPurposeCode;
+    +OBUltimateCreditor1: UltimateCreditor;
+    +OBUltimateDebtor1: UltimateDebtor;
+  }
+  class OBTransaction6Basic{
+    +AccountId: AccountId;
+    +TransactionId: TransactionId;
+    +TransactionReference: TransactionReference;
+    +StatementReference[]: StatementReference;
+    +OBCreditDebitCode_1: CreditDebitIndicator;
+    +ExternalEntryStatus1Code: Status;
+    +OBInternalTransactionMutability1Code: TransactionMutability;
+    +BookingDateTime: BookingDateTime;
+    +ValueDateTime: ValueDateTime;
+    +AddressLine: AddressLine;
+    +OBActiveOrHistoricCurrencyAndAmount_9: Amount;
+    +OBActiveOrHistoricCurrencyAndAmount_10: ChargeAmount;
+    +OBCurrencyExchange5: CurrencyExchange;
+    +OBBankTransactionCodeStructure1: BankTransactionCode;
+    +ProprietaryBankTransactionCodeStructure1: ProprietaryBankTransactionCode;
+    +OBExtendedProprietaryBankTransactionCode[]: ExtendedProprietaryBankTransactionCodes;
+    +OBTransactionCardInstrument1: CardInstrument;
+    +OBSupplementaryData1: SupplementaryData;
+    +ExternalCategoryPurpose1Code: CategoryPurposeCode;
+    +OBExternalPurpose1Code: PaymentPurposeCode;
+  }
+  class OBTransaction6Detail{
+    +AccountId: AccountId;
+    +TransactionId: TransactionId;
+    +TransactionReference: TransactionReference;
+    +StatementReference[]: StatementReference;
+    +OBCreditDebitCode_1: CreditDebitIndicator;
+    +ExternalEntryStatus1Code: Status;
+    +OBInternalTransactionMutability1Code: TransactionMutability;
+    +BookingDateTime: BookingDateTime;
+    +ValueDateTime: ValueDateTime;
+    +TransactionInformation: TransactionInformation;
+    +AddressLine: AddressLine;
+    +OBActiveOrHistoricCurrencyAndAmount_9: Amount;
+    +OBActiveOrHistoricCurrencyAndAmount_10: ChargeAmount;
+    +OBCurrencyExchange5: CurrencyExchange;
+    +OBBankTransactionCodeStructure1: BankTransactionCode;
+    +ProprietaryBankTransactionCodeStructure1: ProprietaryBankTransactionCode;
+    +OBExtendedProprietaryBankTransactionCode[]: ExtendedProprietaryBankTransactionCodes;
+    +OBTransactionCashBalance: Balance;
+    +OBMerchantDetails1: MerchantDetails;
+    +OBBranchAndFinancialInstitutionIdentification6_1: CreditorAgent;
+    +OBCashAccount6_0: CreditorAccount;
+    +OBBranchAndFinancialInstitutionIdentification6_2: DebtorAgent;
+    +OBCashAccount6_1: DebtorAccount;
+    +OBTransactionCardInstrument1: CardInstrument;
+    +OBSupplementaryData1: SupplementaryData;
+    +ExternalCategoryPurpose1Code: CategoryPurposeCode;
+    +OBExternalPurpose1Code: PaymentPurposeCode;
+    +OBUltimateCreditor1: UltimateCreditor;
+    +OBUltimateDebtor1: UltimateDebtor;
+  }
+  class OBTransactionCardInstrument1{
+    +string: CardSchemeName
+    +string: AuthorisationType
+    +string: Name
+    +string: Identification
+  }
+  class OBTransactionCashBalance{
+    +object: Amount
+    +OBCreditDebitCode_2: CreditDebitIndicator;
+    +OBBalanceType1Code: Type;
+  }
+  class OBRisk2{
+  }
+  class OB_Amount1_0{
+  }
+  class OB_Amount1_1{
+  }
+  class OB_Amount1_2{
+  }
+  class OB_Amount1_3{
+  }
+  class OB_Amount1_4{
+  }
+  class OB_CodeMnemonic{
+  }
+  class OB_FeeCategory1Code{
+    <<enumeration>>
+    FCOT
+    FCRE
+    FCSV
+  }
+  class OB_FeeFrequency1Code_0{
+    <<enumeration>>
+    FEAC
+    FEAO
+    FECP
+    FEDA
+    FEHO
+    FEI
+    FEMO
+    FEOA
+    FEOT
+    FEPC
+    FEPH
+    FEPO
+    FEPS
+    FEPT
+    FEPTA
+    FEPTP
+    FEQU
+    FESM
+    FEST
+    FEWE
+    FEYE
+  }
+  class OB_FeeFrequency1Code_1{
+    <<enumeration>>
+    FEAC
+    FEAO
+    FECP
+    FEDA
+    FEHO
+    FEI
+    FEMO
+    FEOA
+    FEOT
+    FEPC
+    FEPH
+    FEPO
+    FEPS
+    FEPT
+    FEPTA
+    FEPTP
+    FEQU
+    FESM
+    FEST
+    FEWE
+    FEYE
+  }
+  class OB_FeeFrequency1Code_2{
+    <<enumeration>>
+    FEAC
+    FEAO
+    FECP
+    FEDA
+    FEHO
+    FEI
+    FEMO
+    FEOA
+    FEOT
+    FEPC
+    FEPH
+    FEPO
+    FEPS
+    FEPT
+    FEPTA
+    FEPTP
+    FEQU
+    FESM
+    FEST
+    FEWE
+    FEYE
+  }
+  class OB_FeeFrequency1Code_3{
+    <<enumeration>>
+    FEAC
+    FEAO
+    FECP
+    FEDA
+    FEHO
+    FEI
+    FEMO
+    FEOA
+    FEOT
+    FEPC
+    FEPH
+    FEPO
+    FEPS
+    FEPT
+    FEPTA
+    FEPTP
+    FEQU
+    FESM
+    FEST
+    FEWE
+    FEYE
+  }
+  class OB_FeeFrequency1Code_4{
+    <<enumeration>>
+    FEAC
+    FEAO
+    FECP
+    FEDA
+    FEHO
+    FEI
+    FEMO
+    FEOA
+    FEOT
+    FEPC
+    FEPH
+    FEPO
+    FEPS
+    FEPT
+    FEPTA
+    FEPTP
+    FEQU
+    FESM
+    FEST
+    FEWE
+    FEYE
+  }
+  class OB_FeeType1Code{
+    <<enumeration>>
+    FEPF
+    FTOT
+    FYAF
+    FYAM
+    FYAQ
+    FYCP
+    FYDB
+    FYMI
+    FYXX
+  }
+  class OB_InterestCalculationMethod1Code{
+    <<enumeration>>
+    ITCO
+    ITOT
+    ITSI
+  }
+  class OB_InterestFixedVariableType1Code{
+    <<enumeration>>
+    INFI
+    INVA
+  }
+  class OB_InterestRateType1Code_0{
+    <<enumeration>>
+    INBB
+    INFR
+    INGR
+    INLR
+    INNE
+    INOT
+  }
+  class OB_InterestRateType1Code_1{
+    <<enumeration>>
+    INBB
+    INFR
+    INGR
+    INLR
+    INNE
+    INOT
+  }
+  class OB_MinMaxType1Code{
+    <<enumeration>>
+    FMMN
+    FMMX
+  }
+  class OB_OtherCodeType1_0{
+    +OB_CodeMnemonic: Code;
+    +Name_4: Name;
+    +Description_3: Description;
+  }
+  class OB_OtherCodeType1_1{
+    +OB_CodeMnemonic: Code;
+    +Name_4: Name;
+    +Description_3: Description;
+  }
+  class OB_OtherCodeType1_2{
+    +OB_CodeMnemonic: Code;
+    +Name_4: Name;
+    +Description_3: Description;
+  }
+  class OB_OtherCodeType1_3{
+    +OB_CodeMnemonic: Code;
+    +Name_4: Name;
+    +Description_3: Description;
+  }
+  class OB_OtherCodeType1_4{
+    +OB_CodeMnemonic: Code;
+    +Name_4: Name;
+    +Description_3: Description;
+  }
+  class OB_OtherCodeType1_5{
+    +OB_CodeMnemonic: Code;
+    +Name_4: Name;
+    +Description_3: Description;
+  }
+  class OB_OtherCodeType1_6{
+    +OB_CodeMnemonic: Code;
+    +Name_4: Name;
+    +Description_3: Description;
+  }
+  class OB_OtherCodeType1_7{
+    +OB_CodeMnemonic: Code;
+    +Name_4: Name;
+    +Description_3: Description;
+  }
+  class OB_OtherCodeType1_8{
+    +OB_CodeMnemonic: Code;
+    +Name_4: Name;
+    +Description_3: Description;
+  }
+  class OB_OtherFeeChargeDetailType{
+    +OB_CodeMnemonic: Code;
+    +OB_FeeCategory1Code: FeeCategory;
+    +Name_4: Name;
+    +Description_3: Description;
+  }
+  class OB_OverdraftFeeType1Code{
+    <<enumeration>>
+    FBAO
+    FBAR
+    FBEB
+    FBIT
+    FBOR
+    FBOS
+    FBSC
+    FBTO
+    FBUB
+    FBUT
+    FTOT
+    FTUT
+  }
+  class OB_Period1Code{
+    <<enumeration>>
+    PACT
+    PDAY
+    PHYR
+    PMTH
+    PQTR
+    PWEK
+    PYER
+  }
+  class OB_Rate1_0{
+  }
+  class OB_Rate1_1{
+  }
+  class OpeningDate{
+  }
+  class PartyId{
+  }
+  class PartyNumber{
+  }
+  class PhoneNumber_0{
+  }
+  class PhoneNumber_1{
+  }
+  class PostBox{
+  }
+  class PostCode{
+  }
+  class PreviousPaymentDateTime{
+  }
+  class ProprietaryBankTransactionCodeStructure1{
+    +string: Code
+    +string: Issuer
+  }
+  class Rate{
+  }
+  class Reference{
+  }
+  class Room{
+  }
+  class OBExtendedProprietaryBankTransactionCode{
+    +string: Code
+    +string: Issuer
+    +string: Description
+  }
+  class OBInternalBeneficiaryType1Code{
+    <<enumeration>>
+    Trusted
+    Ordinary
+  }
+  class ScheduledPaymentDateTime{
+  }
+  class ScheduledPaymentId{
+  }
+  class SecondaryIdentification{
+  }
+  class StandingOrderId{
+  }
+  class StartDateTime{
+  }
+  class StatementFrequencyAndFormat{
+  }
+  class StatementId{
+  }
+  class StatementReference{
+  }
+  class StatusUpdateDateTime{
+  }
+  class StreetName{
+  }
+  class Time{
+  }
+  class TownName{
+  }
+  class TransactionId{
+  }
+  class TransactionInformation{
+  }
+  class TransactionReference{
+  }
+  class UnitNumber{
+  }
+  class Value{
+  }
+  class ValueDateTime{
+  }
+  class Model{
+    +number: id
+  }
+```
+This file was generated by the [openapi-mermaid](https://www.npmjs.com/package/openapi-mermaid) tool.
