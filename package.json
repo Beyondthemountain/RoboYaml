@@ -1,0 +1,14 @@
+{
+  "name": "openapi-diagrams",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:diagrams": "node scripts/openapi_to_mmd.mjs && node scripts/mmd_to_svg.mjs"
+  },
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "^11.0.0",
+    "fast-glob": "^3.3.2",
+    "js-yaml": "^4.1.0",
+    "openapi-mermaid": "^4.12.3"
+  }
+}

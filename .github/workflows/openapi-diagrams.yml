@@ -1,0 +1,45 @@
+name: Build OpenAPI Mermaid + SVG
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "yaml_source/**"
+      - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/openapi-diagrams.yml"
+  pull_request:
+    paths:
+      - "yaml_source/**"
+      - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
+
+jobs:
+  diagrams:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build diagrams
+        run: npm run build:diagrams
+
+      - name: Upload outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: openapi-diagrams
+          path: |
+            yaml_output/mmd
+            yaml_output/svg
