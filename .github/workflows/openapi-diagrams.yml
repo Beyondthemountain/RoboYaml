@@ -19,6 +19,8 @@ on:
 jobs:
   diagrams:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
@@ -36,6 +38,11 @@ jobs:
       - name: Build diagrams
         run: npm run build:diagrams
 
+      - name: Show generated outputs
+        run: |
+          echo "=== yaml_output tree (files) ==="
+          find yaml_output -type f -maxdepth 8 -print || true
+
       - name: Upload outputs
         uses: actions/upload-artifact@v4
         with:
@@ -43,3 +50,26 @@ jobs:
           path: |
             yaml_output/mmd
             yaml_output/svg
+
+      - name: Commit generated diagrams
+        if: github.event_name == 'push'
+        run: |
+          set -e
+
+          # Ensure output roots exist
+          mkdir -p yaml_output/mmd yaml_output/svg
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Stage anything under yaml_output without failing if empty
+          git add -A yaml_output || true
+
+          # Only commit if there are changes staged
+          if git diff --staged --quiet; then
+            echo "No diagram changes to commit"
+            exit 0
+          fi
+
+          git commit -m "Auto-generate diagrams"
+          git push
